@@ -1,22 +1,16 @@
-import { Component } from 'react';
-import { Form } from './Form/Form';
-
-export class App extends Component {
-  state = {
-    users: [],
-  };
-
-  addUserData = user => {
-    this.setState(prevState => ({
-      users: [...prevState.users, user],
-    }));
-  };
-
-  render() {
-    return (
-      <>
-        <Form addUserData={this.addUserData} />
-      </>
-    );
-  }
-}
+export const App = () => {
+  return (
+    <div
+      style={{
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 40,
+        color: '#010101'
+      }}
+    >
+      React homework template
+    </div>
+  );
+};
