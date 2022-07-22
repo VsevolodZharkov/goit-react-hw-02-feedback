@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types'
 const Statistics = ({ good, neutral, bad, countTotalFeedback, countPositiveFeedbackPercentage }) => {
 	return (
 		<div>
@@ -22,4 +22,11 @@ const Statistics = ({ good, neutral, bad, countTotalFeedback, countPositiveFeedb
 		</div>
 	)
 }
+Statistics.propTypes = {
+	good: PropTypes.string.isRequired,
+	neutral: PropTypes.string.isRequired,
+	bad: PropTypes.string.isRequired,
+	countTotalFeedback: PropTypes.func.isRequired,
+	countPositiveFeedbackPercentage:PropTypes.func.isRequired
+};
 export { Statistics };

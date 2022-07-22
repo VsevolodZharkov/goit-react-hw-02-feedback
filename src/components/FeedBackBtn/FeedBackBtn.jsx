@@ -1,5 +1,4 @@
-
-
+import PropTypes from 'prop-types'
 
 const FeedBackBtn = ({handlerClick}) => {
 		return (
@@ -16,6 +15,9 @@ const FeedBackBtn = ({handlerClick}) => {
 				</div>
 		)
 	}
+	FeedBackBtn.propTypes = {
+		handlerClick: PropTypes.func.isRequired
+	};
 export { FeedBackBtn };
 
 

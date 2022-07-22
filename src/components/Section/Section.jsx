@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import PropTypes from 'prop-types'
 
 const Section = ({title, children }) => {
 	return (
@@ -8,5 +9,8 @@ const Section = ({title, children }) => {
 		</Fragment>
 	)
 }
-
+Section.propTypes = {
+	title: PropTypes.string.isRequired,
+	children: PropTypes.elementType.isRequired
+}
 export { Section };
