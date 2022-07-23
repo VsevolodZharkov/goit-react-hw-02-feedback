@@ -3,7 +3,6 @@ import { Section } from './Section/Section'
 import { FeedBackBtn } from './FeedBackBtn/FeedBackBtn'
 import { Statistics } from './Statistics/Statistics'
 import { Notification } from './Notification/Notification'
-import PropTypes from 'prop-types'
 export class App extends Component {
   state = {
     good: 0,
@@ -20,18 +19,20 @@ export class App extends Component {
     return good + neutral + bad;
   };
   countPositiveFeedbackPercentage = () => {
-    const { good, neutral, bad } = this.state;
-    return Math.ceil((good * 100) / (good + neutral + bad));
+    const { good } = this.state;
+    return Math.ceil((good * 100) / (this.countTotalFeedback()));
   };
 
   render() {
     const { good, neutral, bad } = this.state;
-		let sum = good + neutral + bad;
-		console.log(sum);
+		let sum = this.countTotalFeedback();
     return (
       <Fragment>
         <Section title="Please leave feedback">
-          <FeedBackBtn handlerClick={this.handlerClick} />
+          <FeedBackBtn 
+						handlerClick={this.handlerClick} 
+						state={this.state}
+					/>
         </Section>
         <Section title="Statistics">
 					{sum === 0 ? 
@@ -51,10 +52,3 @@ export class App extends Component {
     );
   }
 }
-App.propTypes = {
-	state: PropTypes.shape({
-		good: PropTypes.number.isRequired,
-		neutral: PropTypes.number.isRequired,
-		bad: PropTypes.number.isRequired
-	})
-};
