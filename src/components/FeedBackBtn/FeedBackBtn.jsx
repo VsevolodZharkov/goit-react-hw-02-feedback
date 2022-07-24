@@ -12,7 +12,8 @@ const FeedBackBtn = ({handlerClick, keyState}) => {
 		)
 	}
 	FeedBackBtn.propTypes = {
-		handlerClick: PropTypes.func.isRequired
+		handlerClick: PropTypes.func.isRequired,
+		keyState: PropTypes.array.isRequired
 	};
 export { FeedBackBtn };
 
