@@ -3,6 +3,8 @@ import { Section } from './Section/Section'
 import { FeedBackBtn } from './FeedBackBtn/FeedBackBtn'
 import { Statistics } from './Statistics/Statistics'
 import { Notification } from './Notification/Notification'
+import PropTypes from 'prop-types'
+
 export class App extends Component {
   state = {
     good: 0,
@@ -26,12 +28,13 @@ export class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
 		let sum = this.countTotalFeedback();
+		const keyState = Object.keys(this.state);
     return (
       <Fragment>
         <Section title="Please leave feedback">
           <FeedBackBtn 
 						handlerClick={this.handlerClick} 
-						state={this.state}
+						keyState={keyState}
 					/>
         </Section>
         <Section title="Statistics">
@@ -51,4 +54,8 @@ export class App extends Component {
       </Fragment>
     );
   }
+}
+App.propTypes = {
+	sum: PropTypes.func.isRequired,
+	keyState: PropTypes.array.isRequired
 }

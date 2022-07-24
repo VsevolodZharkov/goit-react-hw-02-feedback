@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 
-const FeedBackBtn = ({handlerClick, state}) => {
-	const keyState = Object.keys(state);
+const FeedBackBtn = ({handlerClick, keyState}) => {
 		return (
 				<div className="">
 					{keyState.map((item) => {
@@ -9,15 +8,6 @@ const FeedBackBtn = ({handlerClick, state}) => {
 											{item}
 										</button>
 					})}
-					{/* <button name='good' type='button' onClick={handlerClick}>
-						Good
-					</button>
-					<button name='neutral' type='button' onClick={handlerClick}>
-						Neutral
-					</button>
-					<button name='bad' type='button' onClick={handlerClick}>
-						Bad
-					</button> */}
 				</div>
 		)
 	}
