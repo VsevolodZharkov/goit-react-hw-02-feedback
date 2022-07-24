@@ -3,7 +3,7 @@ import { Section } from './Section/Section'
 import { FeedBackBtn } from './FeedBackBtn/FeedBackBtn'
 import { Statistics } from './Statistics/Statistics'
 import { Notification } from './Notification/Notification'
-import PropTypes from 'prop-types'
+
 
 export class App extends Component {
   state = {
@@ -54,8 +54,4 @@ export class App extends Component {
       </Fragment>
     );
   }
-}
-App.propTypes = {
-	sum: PropTypes.func.isRequired,
-	keyState: PropTypes.array.isRequired
 }
