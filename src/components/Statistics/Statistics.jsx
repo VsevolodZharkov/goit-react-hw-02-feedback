@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-const Statistics = ({ good, neutral, bad, countTotalFeedback, countPositiveFeedbackPercentage }) => {
+const Statistics = ({ good, neutral, bad, sum, count }) => {
 	return (
 		<div>
 			<ul>
@@ -13,20 +13,20 @@ const Statistics = ({ good, neutral, bad, countTotalFeedback, countPositiveFeedb
 					<p>Bad: {bad}</p>
 				</li>
 				<li className="">
-					<p>Total: {countTotalFeedback}</p>
+					<p>Total: {sum}</p>
 				</li>
 				<li className="">
-					<p>Positive feedback: {countPositiveFeedbackPercentage()} %</p>
+					<p>Positive feedback: {count()} %</p>
 				</li>
 			</ul>
 		</div>
 	)
 }
 Statistics.propTypes = {
-	good: PropTypes.string.isRequired,
-	neutral: PropTypes.string.isRequired,
-	bad: PropTypes.string.isRequired,
-	countTotalFeedback: PropTypes.func.isRequired,
-	countPositiveFeedbackPercentage:PropTypes.func.isRequired
+	good: PropTypes.number.isRequired,
+	neutral: PropTypes.number.isRequired,
+	bad: PropTypes.number.isRequired,
+	sum: PropTypes.func,
+	count:PropTypes.func
 };
 export { Statistics };
