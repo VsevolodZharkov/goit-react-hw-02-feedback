@@ -28,7 +28,7 @@ export class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
 		let sum = this.countTotalFeedback();
-		let count =  this.countPositiveFeedbackPercentage;
+		let count =  this.countPositiveFeedbackPercentage();
 		const keyState = Object.keys(this.state);
     return (
       <Fragment>

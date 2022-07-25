@@ -16,7 +16,7 @@ const Statistics = ({ good, neutral, bad, sum, count }) => {
 					<p>Total: {sum}</p>
 				</li>
 				<li className="">
-					<p>Positive feedback: {count()} %</p>
+					<p>Positive feedback: {count} %</p>
 				</li>
 			</ul>
 		</div>
@@ -26,7 +26,7 @@ Statistics.propTypes = {
 	good: PropTypes.number.isRequired,
 	neutral: PropTypes.number.isRequired,
 	bad: PropTypes.number.isRequired,
-	sum: PropTypes.func,
-	count:PropTypes.func
+	sum: PropTypes.number.isRequired,
+	count:PropTypes.number.isRequired
 };
 export { Statistics };
